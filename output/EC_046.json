@@ -7,7 +7,7 @@
       "split_payment"
     ],
     "case_status": "action_required",
-    "confidence": 0.6
+    "confidence": 0.7
   },
   "affected_entities": {
     "order_ids": [
