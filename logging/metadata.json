@@ -1,14 +1,14 @@
 {
   "run": {
-    "run_id": "2026-08-05T15:45:20.353155+00:00",
-    "started_at": "2026-08-05T15:45:20.353155+00:00",
-    "finished_at": "2026-08-05T15:58:07.219180+00:00",
-    "duration_seconds": 766.86,
+    "run_id": "2026-08-05T17:36:26.973635+00:00",
+    "started_at": "2026-08-05T17:36:26.973635+00:00",
+    "finished_at": "2026-08-05T17:36:30.499237+00:00",
+    "duration_seconds": 3.53,
     "total_cases": 50,
     "succeeded": 50,
     "failed": 0,
-    "mean_confidence": 0.777,
-    "dry_run": false,
+    "mean_confidence": 0.6,
+    "dry_run": true,
     "os": "Windows-10-10.0.26200-SP0",
     "python_version": "3.11.9"
   },
