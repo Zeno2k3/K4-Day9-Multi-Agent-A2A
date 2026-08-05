@@ -1,0 +1,78 @@
+{
+  "case_id": "EC_012",
+  "case_assessment": {
+    "primary_issue": "unavailable_order_paid",
+    "secondary_issues": [
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "73628c6d02ed8f6134d9752cd7b83c2a"
+    ],
+    "item_ids": [],
+    "seller_ids": [],
+    "payment_ids": [
+      "73628c6d02ed8f6134d9752cd7b83c2a:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "0a5fab743da859b3f10a409bbb132a5a",
+    "related_order_ids": [
+      "dee008fbad3f3868874dd10ab5977b88"
+    ]
+  },
+  "product_context": {
+    "product_ids": [],
+    "category_names": []
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2018-03-13 00:00:00",
+    "carrier_handoff_at": null,
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 0.0,
+    "freight_total_brl": 0.0,
+    "expected_total_brl": null,
+    "payment_total_brl": 226.23,
+    "difference_brl": null,
+    "reconciled": null,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_UNAVAILABLE_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:73628c6d02ed8f6134d9752cd7b83c2a",
+    "payment:73628c6d02ed8f6134d9752cd7b83c2a:1",
+    "policy:ORDER_UNAVAILABLE_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 226.23
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

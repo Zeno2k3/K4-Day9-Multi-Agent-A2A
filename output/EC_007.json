@@ -1,0 +1,107 @@
+{
+  "case_id": "EC_007",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "multiple_categories"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "cf788ee4258fde5130bb5651bda63918"
+    ],
+    "item_ids": [
+      "cf788ee4258fde5130bb5651bda63918:1",
+      "cf788ee4258fde5130bb5651bda63918:2"
+    ],
+    "seller_ids": [
+      "da8622b14eb17ae2831f4ac5b9dab84a",
+      "95f83f51203c626648c875dd41874c7f"
+    ],
+    "payment_ids": [
+      "cf788ee4258fde5130bb5651bda63918:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "030b3bb8818a752ca223944036bad5d7",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "a4fa3b8fa5953b0bd18bf4e0b4de499d",
+      "a0b7d5a992ccda646f2d34e418fff5a0"
+    ],
+    "category_names": [
+      "bed_bath_table",
+      "furniture_decor"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-26 22:25:02",
+    "estimated_delivery_at": "2018-03-23 00:00:00",
+    "carrier_handoff_at": "2018-03-06 01:33:12",
+    "delivery_variance_hours": 94.42,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "da8622b14eb17ae2831f4ac5b9dab84a",
+        "shipping_limit_at": "2018-03-08 16:31:39",
+        "handoff_variance_hours": -62.97,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "95f83f51203c626648c875dd41874c7f",
+        "shipping_limit_at": "2018-03-08 16:31:39",
+        "handoff_variance_hours": -62.97,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 179.8,
+    "freight_total_brl": 44.13,
+    "expected_total_brl": 223.93,
+    "payment_total_brl": 223.93,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:cf788ee4258fde5130bb5651bda63918",
+    "item:cf788ee4258fde5130bb5651bda63918:1",
+    "item:cf788ee4258fde5130bb5651bda63918:2",
+    "payment:cf788ee4258fde5130bb5651bda63918:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 44.13
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion",
+    "coordinate_multi_seller_case"
+  ]
+}

@@ -1,0 +1,99 @@
+{
+  "case_id": "EC_022",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "split_payment",
+      "repeat_customer"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.3
+  },
+  "affected_entities": {
+    "order_ids": [
+      "ca0400dec2c292340c373e63b1c2c597"
+    ],
+    "item_ids": [
+      "ca0400dec2c292340c373e63b1c2c597:1",
+      "ca0400dec2c292340c373e63b1c2c597:2",
+      "ca0400dec2c292340c373e63b1c2c597:3",
+      "ca0400dec2c292340c373e63b1c2c597:4"
+    ],
+    "seller_ids": [
+      "751bdc4d83a466c7206cd42e8f426b03"
+    ],
+    "payment_ids": [
+      "ca0400dec2c292340c373e63b1c2c597:1",
+      "ca0400dec2c292340c373e63b1c2c597:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "0aadc1d26d1c8b88a52c39a533ccea93",
+    "related_order_ids": [
+      "7aa62957446715905f98f714be58f580"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "42bf9ee410b1247f0223626107834b87"
+    ],
+    "category_names": [
+      "sports_leisure"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-12-20 17:22:29",
+    "estimated_delivery_at": "2017-12-22 00:00:00",
+    "carrier_handoff_at": "2017-11-29 21:11:41",
+    "delivery_variance_hours": -30.63,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "751bdc4d83a466c7206cd42e8f426b03",
+        "shipping_limit_at": "2017-12-04 10:40:55",
+        "handoff_variance_hours": -109.49,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 679.96,
+    "freight_total_brl": 77.72,
+    "expected_total_brl": 757.68,
+    "payment_total_brl": 757.68,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:ca0400dec2c292340c373e63b1c2c597",
+    "item:ca0400dec2c292340c373e63b1c2c597:1",
+    "item:ca0400dec2c292340c373e63b1c2c597:2",
+    "item:ca0400dec2c292340c373e63b1c2c597:3",
+    "item:ca0400dec2c292340c373e63b1c2c597:4",
+    "payment:ca0400dec2c292340c373e63b1c2c597:1",
+    "payment:ca0400dec2c292340c373e63b1c2c597:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment"
+  ]
+}

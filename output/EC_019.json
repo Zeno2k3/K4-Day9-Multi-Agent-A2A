@@ -1,0 +1,102 @@
+{
+  "case_id": "EC_019",
+  "case_assessment": {
+    "primary_issue": "late_delivery_seller",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "a4e90af1c84c4455c7c4c65293ae2c78"
+    ],
+    "item_ids": [
+      "a4e90af1c84c4455c7c4c65293ae2c78:1",
+      "a4e90af1c84c4455c7c4c65293ae2c78:2"
+    ],
+    "seller_ids": [
+      "4a3ca9315b744ce9f8e9374361493884"
+    ],
+    "payment_ids": [
+      "a4e90af1c84c4455c7c4c65293ae2c78:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "e3301490c373db9263c15a73172d0c6f",
+    "related_order_ids": [
+      "3ce16e50c1842ad30631811796a31afc",
+      "c7c28a159a907d1d0ff580856daffa72"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "f4d18451e6c35980e6898e36dfd6fb55"
+    ],
+    "category_names": [
+      "bed_bath_table"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-05-22 15:25:48",
+    "estimated_delivery_at": "2017-05-10 00:00:00",
+    "carrier_handoff_at": "2017-05-02 13:54:14",
+    "delivery_variance_hours": 303.43,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+        "shipping_limit_at": "2017-04-27 12:36:44",
+        "handoff_variance_hours": 121.29,
+        "late_handoff": true
+      }
+    ],
+    "late_handoff_seller_ids": [
+      "4a3ca9315b744ce9f8e9374361493884"
+    ]
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 97.8,
+    "freight_total_brl": 23.48,
+    "expected_total_brl": 121.28,
+    "payment_total_brl": 121.28,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "seller",
+        "party_id": "4a3ca9315b744ce9f8e9374361493884"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:a4e90af1c84c4455c7c4c65293ae2c78",
+    "item:a4e90af1c84c4455c7c4c65293ae2c78:1",
+    "item:a4e90af1c84c4455c7c4c65293ae2c78:2",
+    "payment:a4e90af1c84c4455c7c4c65293ae2c78:1",
+    "seller:4a3ca9315b744ce9f8e9374361493884",
+    "policy:SELLER_HANDOFF_AFTER_LIMIT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 23.48
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_seller_handoff",
+    "verify_refund_completion"
+  ]
+}

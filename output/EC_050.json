@@ -1,0 +1,100 @@
+{
+  "case_id": "EC_050",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "multiple_categories"
+    ],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "370098d35ccd8a2af86b57c81ac7d24f"
+    ],
+    "item_ids": [
+      "370098d35ccd8a2af86b57c81ac7d24f:1",
+      "370098d35ccd8a2af86b57c81ac7d24f:2"
+    ],
+    "seller_ids": [
+      "55dedd83e501d8248880557d9073cbfd",
+      "b90e891671cffd9557f33a97dc523645"
+    ],
+    "payment_ids": [
+      "370098d35ccd8a2af86b57c81ac7d24f:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "e8a425f2b5d885c380a80386d64277b8",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "2527d5ced6628c0e47d84293794bc208",
+      "02a0c276d5a252215b48269dea73a6e7"
+    ],
+    "category_names": [
+      "health_beauty",
+      "sports_leisure"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-23 18:29:19",
+    "estimated_delivery_at": "2018-09-11 00:00:00",
+    "carrier_handoff_at": "2018-08-20 15:06:00",
+    "delivery_variance_hours": -437.51,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "55dedd83e501d8248880557d9073cbfd",
+        "shipping_limit_at": "2018-08-22 13:49:40",
+        "handoff_variance_hours": -46.73,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "b90e891671cffd9557f33a97dc523645",
+        "shipping_limit_at": "2018-08-22 13:49:40",
+        "handoff_variance_hours": -46.73,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 209.9,
+    "freight_total_brl": 31.67,
+    "expected_total_brl": 241.57,
+    "payment_total_brl": 241.57,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:370098d35ccd8a2af86b57c81ac7d24f",
+    "item:370098d35ccd8a2af86b57c81ac7d24f:1",
+    "item:370098d35ccd8a2af86b57c81ac7d24f:2",
+    "payment:370098d35ccd8a2af86b57c81ac7d24f:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund",
+    "coordinate_multi_seller_case"
+  ]
+}

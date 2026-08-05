@@ -1,0 +1,98 @@
+{
+  "case_id": "EC_027",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.7
+  },
+  "affected_entities": {
+    "order_ids": [
+      "9a71f055d972d1ebacec9df7376ff1e3"
+    ],
+    "item_ids": [
+      "9a71f055d972d1ebacec9df7376ff1e3:1",
+      "9a71f055d972d1ebacec9df7376ff1e3:2"
+    ],
+    "seller_ids": [
+      "620c87c171fb2a6dd6e8bb4dec959fc6"
+    ],
+    "payment_ids": [
+      "9a71f055d972d1ebacec9df7376ff1e3:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "3f1ae9854823f7c0a8027bd994b2ce64",
+    "related_order_ids": [
+      "9165d656c399c6eac7a6a00dd6e02e7f"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "6c712952b8ef62f8d06a0314917400c8"
+    ],
+    "category_names": [
+      "health_beauty"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-04-19 18:48:29",
+    "estimated_delivery_at": "2018-04-04 00:00:00",
+    "carrier_handoff_at": "2018-03-14 19:27:24",
+    "delivery_variance_hours": 378.81,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "620c87c171fb2a6dd6e8bb4dec959fc6",
+        "shipping_limit_at": "2018-03-19 13:30:29",
+        "handoff_variance_hours": -114.05,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 139.8,
+    "freight_total_brl": 30.38,
+    "expected_total_brl": 170.18,
+    "payment_total_brl": 170.18,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:9a71f055d972d1ebacec9df7376ff1e3",
+    "item:9a71f055d972d1ebacec9df7376ff1e3:1",
+    "item:9a71f055d972d1ebacec9df7376ff1e3:2",
+    "payment:9a71f055d972d1ebacec9df7376ff1e3:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 30.38
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

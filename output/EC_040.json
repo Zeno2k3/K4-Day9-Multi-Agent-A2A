@@ -1,0 +1,98 @@
+{
+  "case_id": "EC_040",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "multiple_categories"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "992cbe3e064cd39f9ccde60a29ffcd3c"
+    ],
+    "item_ids": [
+      "992cbe3e064cd39f9ccde60a29ffcd3c:1",
+      "992cbe3e064cd39f9ccde60a29ffcd3c:2"
+    ],
+    "seller_ids": [
+      "5b581417df4480f632484ba681e53944"
+    ],
+    "payment_ids": [
+      "992cbe3e064cd39f9ccde60a29ffcd3c:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "16534282c820ca754b8de47754bb6d1a",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "fe4dece0c663ba4f1f9f2d04d3b93a97",
+      "db7e6804f1a8206a7e51c9a741a09d9e"
+    ],
+    "category_names": [
+      "cool_stuff",
+      "toys"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-02-26 21:22:10",
+    "estimated_delivery_at": "2018-02-09 00:00:00",
+    "carrier_handoff_at": "2018-01-18 19:13:36",
+    "delivery_variance_hours": 429.37,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "5b581417df4480f632484ba681e53944",
+        "shipping_limit_at": "2018-01-22 21:11:44",
+        "handoff_variance_hours": -97.97,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 288.9,
+    "freight_total_brl": 75.98,
+    "expected_total_brl": 364.88,
+    "payment_total_brl": 364.88,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "boleto"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:992cbe3e064cd39f9ccde60a29ffcd3c",
+    "item:992cbe3e064cd39f9ccde60a29ffcd3c:1",
+    "item:992cbe3e064cd39f9ccde60a29ffcd3c:2",
+    "payment:992cbe3e064cd39f9ccde60a29ffcd3c:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 75.98
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "run": {
+    "run_id": "2026-08-05T15:45:20.353155+00:00",
+    "started_at": "2026-08-05T15:45:20.353155+00:00",
+    "finished_at": "2026-08-05T15:58:07.219180+00:00",
+    "duration_seconds": 766.86,
+    "total_cases": 50,
+    "succeeded": 50,
+    "failed": 0,
+    "mean_confidence": 0.777,
+    "dry_run": false,
+    "os": "Windows-10-10.0.26200-SP0",
+    "python_version": "3.11.9"
+  },
+  "agents": [
+    {
+      "name": "order_product_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "customer_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "payment_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "delivery_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "policy_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "verifier_agent",
+      "uses_llm": true,
+      "model_name": "llama-3.1-8b-instant",
+      "provider": "groq",
+      "parameter_size": "8B",
+      "endpoint": "https://api.groq.com/openai/v1/chat/completions"
+    },
+    {
+      "name": "coordinator",
+      "uses_llm": false,
+      "model_name": null,
+      "provider": null,
+      "parameter_size": null,
+      "endpoint": null
+    }
+  ],
+  "frameworks": {
+    "language": "Python 3.11.9",
+    "llm_sdk": "openai (SDK) -> Groq OpenAI-compatible endpoint",
+    "data": "pandas",
+    "validation": "pydantic v2",
+    "orchestration": "custom lightweight orchestrator (no LangGraph/CrewAI)"
+  },
+  "policy_version": "EC_POLICY_V2",
+  "dataset": "Olist Brazilian E-Commerce Public Dataset (Kaggle olistbr/brazilian-ecommerce)"
+}

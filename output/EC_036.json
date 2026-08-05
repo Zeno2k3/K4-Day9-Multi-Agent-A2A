@@ -1,0 +1,102 @@
+{
+  "case_id": "EC_036",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.4
+  },
+  "affected_entities": {
+    "order_ids": [
+      "201797d3f567dc70cc5732ecf055e346"
+    ],
+    "item_ids": [
+      "201797d3f567dc70cc5732ecf055e346:1",
+      "201797d3f567dc70cc5732ecf055e346:2"
+    ],
+    "seller_ids": [
+      "95f83f51203c626648c875dd41874c7f",
+      "23613d49c3ac2bd302259e55c06c050c"
+    ],
+    "payment_ids": [
+      "201797d3f567dc70cc5732ecf055e346:1",
+      "201797d3f567dc70cc5732ecf055e346:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "254f01c0c4853e5c23a801f29069f932",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "a0b7d5a992ccda646f2d34e418fff5a0",
+      "188d0b148e6d1c86faffe0d73c3f2dad"
+    ],
+    "category_names": [
+      "furniture_decor"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-27 16:42:16",
+    "estimated_delivery_at": "2018-04-12 00:00:00",
+    "carrier_handoff_at": "2018-03-20 22:51:45",
+    "delivery_variance_hours": -367.3,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "95f83f51203c626648c875dd41874c7f",
+        "shipping_limit_at": "2018-03-23 18:31:28",
+        "handoff_variance_hours": -67.66,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "23613d49c3ac2bd302259e55c06c050c",
+        "shipping_limit_at": "2018-03-23 18:31:28",
+        "handoff_variance_hours": -67.66,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 115.8,
+    "freight_total_brl": 46.06,
+    "expected_total_brl": 161.86,
+    "payment_total_brl": 161.86,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:201797d3f567dc70cc5732ecf055e346",
+    "item:201797d3f567dc70cc5732ecf055e346:1",
+    "item:201797d3f567dc70cc5732ecf055e346:2",
+    "payment:201797d3f567dc70cc5732ecf055e346:1",
+    "payment:201797d3f567dc70cc5732ecf055e346:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment",
+    "coordinate_multi_seller_case"
+  ]
+}

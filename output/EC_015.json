@@ -1,0 +1,106 @@
+{
+  "case_id": "EC_015",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.4
+  },
+  "affected_entities": {
+    "order_ids": [
+      "ccec592b58e122dc2bfc2305152d9603"
+    ],
+    "item_ids": [
+      "ccec592b58e122dc2bfc2305152d9603:1",
+      "ccec592b58e122dc2bfc2305152d9603:2"
+    ],
+    "seller_ids": [
+      "845e8036c3f7bf62099352f5ed910240",
+      "8a432f4e5b471f8da497d7dc517666e2"
+    ],
+    "payment_ids": [
+      "ccec592b58e122dc2bfc2305152d9603:1",
+      "ccec592b58e122dc2bfc2305152d9603:2",
+      "ccec592b58e122dc2bfc2305152d9603:3",
+      "ccec592b58e122dc2bfc2305152d9603:4"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "61b4260aa3892f7f714ba862cd42fd0e",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "9c6d5d4aaea6884ee19112567691a1da",
+      "11a10f5773a7da9fb352dfe9e119803b"
+    ],
+    "category_names": [
+      "bed_bath_table"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-29 18:32:32",
+    "estimated_delivery_at": "2018-09-14 00:00:00",
+    "carrier_handoff_at": "2018-08-27 15:22:00",
+    "delivery_variance_hours": -365.46,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "845e8036c3f7bf62099352f5ed910240",
+        "shipping_limit_at": "2018-08-30 16:30:17",
+        "handoff_variance_hours": -73.14,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "8a432f4e5b471f8da497d7dc517666e2",
+        "shipping_limit_at": "2018-08-28 16:30:17",
+        "handoff_variance_hours": -25.14,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 174.9,
+    "freight_total_brl": 36.68,
+    "expected_total_brl": 211.58,
+    "payment_total_brl": 211.58,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:ccec592b58e122dc2bfc2305152d9603",
+    "item:ccec592b58e122dc2bfc2305152d9603:1",
+    "item:ccec592b58e122dc2bfc2305152d9603:2",
+    "payment:ccec592b58e122dc2bfc2305152d9603:1",
+    "payment:ccec592b58e122dc2bfc2305152d9603:2",
+    "payment:ccec592b58e122dc2bfc2305152d9603:3",
+    "payment:ccec592b58e122dc2bfc2305152d9603:4",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment",
+    "coordinate_multi_seller_case"
+  ]
+}

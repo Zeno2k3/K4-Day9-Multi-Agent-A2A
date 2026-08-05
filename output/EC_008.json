@@ -1,0 +1,102 @@
+{
+  "case_id": "EC_008",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.4
+  },
+  "affected_entities": {
+    "order_ids": [
+      "23c312ca9f0242a48a95e5643bee2645"
+    ],
+    "item_ids": [
+      "23c312ca9f0242a48a95e5643bee2645:1",
+      "23c312ca9f0242a48a95e5643bee2645:2"
+    ],
+    "seller_ids": [
+      "6b3bd31ad8fcda4b2635ec9f3ff2ecdf",
+      "c32fc744b9160ac853450488e3cfea93"
+    ],
+    "payment_ids": [
+      "23c312ca9f0242a48a95e5643bee2645:1",
+      "23c312ca9f0242a48a95e5643bee2645:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "fd16ef833c280c8e679d5025535a32e7",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "6ab41d7f15e7af9d6c7cd912055acc1a",
+      "c1c1d3afbe6a5ab7a534f7ea20e09b8e"
+    ],
+    "category_names": [
+      "sports_leisure"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-05-21 22:16:02",
+    "estimated_delivery_at": "2018-05-25 00:00:00",
+    "carrier_handoff_at": "2018-05-07 14:31:00",
+    "delivery_variance_hours": -73.73,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "6b3bd31ad8fcda4b2635ec9f3ff2ecdf",
+        "shipping_limit_at": "2018-05-10 14:30:36",
+        "handoff_variance_hours": -71.99,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "c32fc744b9160ac853450488e3cfea93",
+        "shipping_limit_at": "2018-05-10 14:30:36",
+        "handoff_variance_hours": -71.99,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 135.8,
+    "freight_total_brl": 34.93,
+    "expected_total_brl": 170.73,
+    "payment_total_brl": 170.73,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:23c312ca9f0242a48a95e5643bee2645",
+    "item:23c312ca9f0242a48a95e5643bee2645:1",
+    "item:23c312ca9f0242a48a95e5643bee2645:2",
+    "payment:23c312ca9f0242a48a95e5643bee2645:1",
+    "payment:23c312ca9f0242a48a95e5643bee2645:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment",
+    "coordinate_multi_seller_case"
+  ]
+}

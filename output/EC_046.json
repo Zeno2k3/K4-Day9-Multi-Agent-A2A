@@ -1,0 +1,103 @@
+{
+  "case_id": "EC_046",
+  "case_assessment": {
+    "primary_issue": "late_delivery_seller",
+    "secondary_issues": [
+      "multi_item_order",
+      "split_payment"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.7
+  },
+  "affected_entities": {
+    "order_ids": [
+      "0e3ec3c17b64c6cc7bc01bba21e7afdf"
+    ],
+    "item_ids": [
+      "0e3ec3c17b64c6cc7bc01bba21e7afdf:1",
+      "0e3ec3c17b64c6cc7bc01bba21e7afdf:2"
+    ],
+    "seller_ids": [
+      "cca3071e3e9bb7d12640c9fbe2301306"
+    ],
+    "payment_ids": [
+      "0e3ec3c17b64c6cc7bc01bba21e7afdf:1",
+      "0e3ec3c17b64c6cc7bc01bba21e7afdf:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "fc3ae503d8cbc4c02a2d8e467b7bbfe5",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "c857b96593773e940454e76efa8eabb3"
+    ],
+    "category_names": [
+      "furniture_decor"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-06-08 05:47:38",
+    "estimated_delivery_at": "2017-05-26 00:00:00",
+    "carrier_handoff_at": "2017-05-17 10:03:46",
+    "delivery_variance_hours": 317.79,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "cca3071e3e9bb7d12640c9fbe2301306",
+        "shipping_limit_at": "2017-05-16 16:30:12",
+        "handoff_variance_hours": 17.56,
+        "late_handoff": true
+      }
+    ],
+    "late_handoff_seller_ids": [
+      "cca3071e3e9bb7d12640c9fbe2301306"
+    ]
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 119.8,
+    "freight_total_brl": 25.52,
+    "expected_total_brl": 145.32,
+    "payment_total_brl": 145.32,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "seller",
+        "party_id": "cca3071e3e9bb7d12640c9fbe2301306"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:0e3ec3c17b64c6cc7bc01bba21e7afdf",
+    "item:0e3ec3c17b64c6cc7bc01bba21e7afdf:1",
+    "item:0e3ec3c17b64c6cc7bc01bba21e7afdf:2",
+    "payment:0e3ec3c17b64c6cc7bc01bba21e7afdf:1",
+    "payment:0e3ec3c17b64c6cc7bc01bba21e7afdf:2",
+    "seller:cca3071e3e9bb7d12640c9fbe2301306",
+    "policy:SELLER_HANDOFF_AFTER_LIMIT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 25.52
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_seller_handoff",
+    "verify_refund_completion",
+    "verify_payment_allocation"
+  ]
+}

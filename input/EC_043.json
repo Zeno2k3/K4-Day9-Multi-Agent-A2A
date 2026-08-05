@@ -1,0 +1,13 @@
+{
+  "case_id": "EC_043",
+  "customer_request": {
+    "language": "vi",
+    "message": "Hãy điều tra khiếu nại, kiểm tra lịch sử khách hàng và đối soát toàn bộ order.",
+    "claimed_order_id": "e58fb7bfd033514475ab0883ded704f4"
+  },
+  "investigation_scope": {
+    "include_customer_history": true,
+    "include_product_context": true
+  },
+  "policy_version": "EC_POLICY_V2"
+}

@@ -1,0 +1,98 @@
+{
+  "case_id": "EC_003",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.7
+  },
+  "affected_entities": {
+    "order_ids": [
+      "6c1798a95735e69db81fe92f8c40bdb4"
+    ],
+    "item_ids": [
+      "6c1798a95735e69db81fe92f8c40bdb4:1",
+      "6c1798a95735e69db81fe92f8c40bdb4:2"
+    ],
+    "seller_ids": [
+      "3df020b72d3d44b3af9d110fa3940b65"
+    ],
+    "payment_ids": [
+      "6c1798a95735e69db81fe92f8c40bdb4:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "02168ea18740a0fdaaa15f11bebba5db",
+    "related_order_ids": [
+      "9cf677fc6e42f8256b310109fe5f2333"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "f646af315b0f3a597f69213537ca2199"
+    ],
+    "category_names": [
+      "furniture_decor"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-09-23 18:30:03",
+    "estimated_delivery_at": "2017-09-15 00:00:00",
+    "carrier_handoff_at": "2017-08-21 21:00:04",
+    "delivery_variance_hours": 210.5,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "3df020b72d3d44b3af9d110fa3940b65",
+        "shipping_limit_at": "2017-08-24 21:15:09",
+        "handoff_variance_hours": -72.25,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 99.8,
+    "freight_total_brl": 32.22,
+    "expected_total_brl": 132.02,
+    "payment_total_brl": 132.02,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:6c1798a95735e69db81fe92f8c40bdb4",
+    "item:6c1798a95735e69db81fe92f8c40bdb4:1",
+    "item:6c1798a95735e69db81fe92f8c40bdb4:2",
+    "payment:6c1798a95735e69db81fe92f8c40bdb4:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 32.22
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

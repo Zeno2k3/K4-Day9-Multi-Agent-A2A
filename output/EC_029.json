@@ -1,0 +1,107 @@
+{
+  "case_id": "EC_029",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "split_payment",
+      "repeat_customer",
+      "multiple_categories"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.3
+  },
+  "affected_entities": {
+    "order_ids": [
+      "b69321fb7d3000994c5a2b55c4f3cb01"
+    ],
+    "item_ids": [
+      "b69321fb7d3000994c5a2b55c4f3cb01:1",
+      "b69321fb7d3000994c5a2b55c4f3cb01:2"
+    ],
+    "seller_ids": [
+      "4a3ca9315b744ce9f8e9374361493884",
+      "d20b021d3efdf267a402c402a48ea64b"
+    ],
+    "payment_ids": [
+      "b69321fb7d3000994c5a2b55c4f3cb01:1",
+      "b69321fb7d3000994c5a2b55c4f3cb01:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "19f8fcd23ed70e29220a6a2f13ecd911",
+    "related_order_ids": [
+      "9a43b717c408493ff788aeb5d11d0684"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "b7605b5b483063d12bd90a772bff9d21",
+      "8adde8ed66e628e94f29b9832156ab08"
+    ],
+    "category_names": [
+      "bed_bath_table",
+      "furniture_decor"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-12-14 20:22:50",
+    "estimated_delivery_at": "2017-12-27 00:00:00",
+    "carrier_handoff_at": "2017-12-06 13:53:06",
+    "delivery_variance_hours": -291.62,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "4a3ca9315b744ce9f8e9374361493884",
+        "shipping_limit_at": "2017-12-07 20:24:40",
+        "handoff_variance_hours": -30.53,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "d20b021d3efdf267a402c402a48ea64b",
+        "shipping_limit_at": "2017-12-07 20:24:40",
+        "handoff_variance_hours": -30.53,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 94.99,
+    "freight_total_brl": 24.53,
+    "expected_total_brl": 119.52,
+    "payment_total_brl": 119.52,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card",
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:b69321fb7d3000994c5a2b55c4f3cb01",
+    "item:b69321fb7d3000994c5a2b55c4f3cb01:1",
+    "item:b69321fb7d3000994c5a2b55c4f3cb01:2",
+    "payment:b69321fb7d3000994c5a2b55c4f3cb01:1",
+    "payment:b69321fb7d3000994c5a2b55c4f3cb01:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment",
+    "coordinate_multi_seller_case"
+  ]
+}

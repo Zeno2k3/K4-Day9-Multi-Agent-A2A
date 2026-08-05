@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_025",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "4cf6a6de996beb9d4b190c7983be98d9"
+    ],
+    "item_ids": [
+      "4cf6a6de996beb9d4b190c7983be98d9:1",
+      "4cf6a6de996beb9d4b190c7983be98d9:2"
+    ],
+    "seller_ids": [
+      "1f50f920176fa81dab994f9023523100"
+    ],
+    "payment_ids": [
+      "4cf6a6de996beb9d4b190c7983be98d9:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "4b979b432abe14a88cd0cde893952677",
+    "related_order_ids": [
+      "4e3cf72d676f793f15859c9ae34be2ad"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "0bcc3eeca39e1064258aa1e932269894"
+    ],
+    "category_names": [
+      "garden_tools"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-10-12 17:43:26",
+    "estimated_delivery_at": "2017-10-27 00:00:00",
+    "carrier_handoff_at": "2017-10-09 21:24:10",
+    "delivery_variance_hours": -342.28,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "1f50f920176fa81dab994f9023523100",
+        "shipping_limit_at": "2017-10-10 18:28:22",
+        "handoff_variance_hours": -21.07,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 119.8,
+    "freight_total_brl": 26.88,
+    "expected_total_brl": 146.68,
+    "payment_total_brl": 146.68,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:4cf6a6de996beb9d4b190c7983be98d9",
+    "item:4cf6a6de996beb9d4b190c7983be98d9:1",
+    "item:4cf6a6de996beb9d4b190c7983be98d9:2",
+    "payment:4cf6a6de996beb9d4b190c7983be98d9:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

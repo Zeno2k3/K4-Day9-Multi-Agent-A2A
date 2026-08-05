@@ -1,0 +1,98 @@
+{
+  "case_id": "EC_021",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order"
+    ],
+    "case_status": "no_action",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "cc8778d76e567b45082b7f52bce23095"
+    ],
+    "item_ids": [
+      "cc8778d76e567b45082b7f52bce23095:1",
+      "cc8778d76e567b45082b7f52bce23095:2"
+    ],
+    "seller_ids": [
+      "de722cd6dad950a92b7d4f82673f8833",
+      "1c68394e931a64f90ea236c5ea590300"
+    ],
+    "payment_ids": [
+      "cc8778d76e567b45082b7f52bce23095:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "636b413d6b339d4687d7f18f9d89b2f6",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "909b87db6cb3a7ab26bd03cc59860136",
+      "a1a97164f38cfb98511eb68e6b40ad94"
+    ],
+    "category_names": [
+      "computers_accessories"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-04-30 22:16:47",
+    "estimated_delivery_at": "2018-05-29 00:00:00",
+    "carrier_handoff_at": "2018-04-23 18:22:46",
+    "delivery_variance_hours": -673.72,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "de722cd6dad950a92b7d4f82673f8833",
+        "shipping_limit_at": "2018-04-26 17:30:45",
+        "handoff_variance_hours": -71.13,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "1c68394e931a64f90ea236c5ea590300",
+        "shipping_limit_at": "2018-05-03 17:30:45",
+        "handoff_variance_hours": -239.13,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 107.91,
+    "freight_total_brl": 57.68,
+    "expected_total_brl": 165.59,
+    "payment_total_brl": 165.59,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:cc8778d76e567b45082b7f52bce23095",
+    "item:cc8778d76e567b45082b7f52bce23095:1",
+    "item:cc8778d76e567b45082b7f52bce23095:2",
+    "payment:cc8778d76e567b45082b7f52bce23095:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund",
+    "coordinate_multi_seller_case"
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "case_id": "EC_005",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "3a20bcc250e5404ca717dfa90e8a9c05"
+    ],
+    "item_ids": [
+      "3a20bcc250e5404ca717dfa90e8a9c05:1",
+      "3a20bcc250e5404ca717dfa90e8a9c05:2"
+    ],
+    "seller_ids": [
+      "dc4a0fc896dc34b0d5bfec8438291c80",
+      "8160255418d5aaa7dbdc9f4c64ebda44"
+    ],
+    "payment_ids": [
+      "3a20bcc250e5404ca717dfa90e8a9c05:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "e779db0c222c66daea0527e24c4a05e1",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "5b2b72f58d212a6e4733884ef0ece564",
+      "c686d4fd1e845efd1b98db8220f0af3b"
+    ],
+    "category_names": [
+      "bed_bath_table"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-12-11 22:24:54",
+    "estimated_delivery_at": "2017-12-07 00:00:00",
+    "carrier_handoff_at": "2017-11-22 00:52:52",
+    "delivery_variance_hours": 118.42,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "dc4a0fc896dc34b0d5bfec8438291c80",
+        "shipping_limit_at": "2017-11-24 13:37:25",
+        "handoff_variance_hours": -60.74,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "8160255418d5aaa7dbdc9f4c64ebda44",
+        "shipping_limit_at": "2017-11-24 13:37:25",
+        "handoff_variance_hours": -60.74,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 432.25,
+    "freight_total_brl": 32.75,
+    "expected_total_brl": 465.0,
+    "payment_total_brl": 465.0,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:3a20bcc250e5404ca717dfa90e8a9c05",
+    "item:3a20bcc250e5404ca717dfa90e8a9c05:1",
+    "item:3a20bcc250e5404ca717dfa90e8a9c05:2",
+    "payment:3a20bcc250e5404ca717dfa90e8a9c05:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 32.75
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion",
+    "coordinate_multi_seller_case"
+  ]
+}

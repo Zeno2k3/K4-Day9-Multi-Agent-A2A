@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_026",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [
+      "multi_item_order"
+    ],
+    "case_status": "action_required",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "9b4fc5c379134e1329bd48641ba285e3"
+    ],
+    "item_ids": [
+      "9b4fc5c379134e1329bd48641ba285e3:1",
+      "9b4fc5c379134e1329bd48641ba285e3:2"
+    ],
+    "seller_ids": [
+      "8132b9bd16876e1b0f8808d43825dd48"
+    ],
+    "payment_ids": [
+      "9b4fc5c379134e1329bd48641ba285e3:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "1cf8baaa3547b7f159e6a59b3ef324d6",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "9f2597e311355defa12f1491420d40d5"
+    ],
+    "category_names": [
+      "sports_leisure"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2017-08-04 00:00:00",
+    "carrier_handoff_at": null,
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "8132b9bd16876e1b0f8808d43825dd48",
+        "shipping_limit_at": "2017-08-02 10:10:15",
+        "handoff_variance_hours": null,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 650.0,
+    "freight_total_brl": 20.04,
+    "expected_total_brl": 670.04,
+    "payment_total_brl": 670.04,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:9b4fc5c379134e1329bd48641ba285e3",
+    "item:9b4fc5c379134e1329bd48641ba285e3:1",
+    "item:9b4fc5c379134e1329bd48641ba285e3:2",
+    "payment:9b4fc5c379134e1329bd48641ba285e3:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 670.04
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

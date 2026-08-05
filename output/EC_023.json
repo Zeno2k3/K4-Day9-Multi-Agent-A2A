@@ -1,0 +1,98 @@
+{
+  "case_id": "EC_023",
+  "case_assessment": {
+    "primary_issue": "late_delivery_logistics",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.7
+  },
+  "affected_entities": {
+    "order_ids": [
+      "9d0516ad96d793d308cec3c5929ed649"
+    ],
+    "item_ids": [
+      "9d0516ad96d793d308cec3c5929ed649:1",
+      "9d0516ad96d793d308cec3c5929ed649:2"
+    ],
+    "seller_ids": [
+      "a1043bafd471dff536d0c462352beb48"
+    ],
+    "payment_ids": [
+      "9d0516ad96d793d308cec3c5929ed649:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "e11a1b428e150830944b665cb6b2d5da",
+    "related_order_ids": [
+      "1534abac962760cbb058568f7dffc105"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "c4baedd846ed09b85f78a781b522f126"
+    ],
+    "category_names": [
+      "garden_tools"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-02-05 19:53:16",
+    "estimated_delivery_at": "2018-01-17 00:00:00",
+    "carrier_handoff_at": "2017-12-20 08:55:28",
+    "delivery_variance_hours": 475.89,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "a1043bafd471dff536d0c462352beb48",
+        "shipping_limit_at": "2017-12-22 21:11:14",
+        "handoff_variance_hours": -60.26,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 179.98,
+    "freight_total_brl": 101.0,
+    "expected_total_brl": 280.98,
+    "payment_total_brl": 280.98,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "CARRIER_DELIVERED_AFTER_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "logistics_provider",
+        "party_id": "LOGISTICS_PROVIDER"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:9d0516ad96d793d308cec3c5929ed649",
+    "item:9d0516ad96d793d308cec3c5929ed649:1",
+    "item:9d0516ad96d793d308cec3c5929ed649:2",
+    "payment:9d0516ad96d793d308cec3c5929ed649:1",
+    "policy:CARRIER_DELIVERED_AFTER_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 101.0
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_carrier_delay",
+    "verify_refund_completion"
+  ]
+}

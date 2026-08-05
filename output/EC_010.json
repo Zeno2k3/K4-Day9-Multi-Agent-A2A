@@ -1,0 +1,101 @@
+{
+  "case_id": "EC_010",
+  "case_assessment": {
+    "primary_issue": "valid_split_payment",
+    "secondary_issues": [
+      "multi_item_order",
+      "multi_seller_order",
+      "split_payment"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.4
+  },
+  "affected_entities": {
+    "order_ids": [
+      "919baca007d9525b6668c18f79a33197"
+    ],
+    "item_ids": [
+      "919baca007d9525b6668c18f79a33197:1",
+      "919baca007d9525b6668c18f79a33197:2"
+    ],
+    "seller_ids": [
+      "c60b801f2d52c7f7f91de00870882a75",
+      "7d13fca15225358621be4086e1eb0964"
+    ],
+    "payment_ids": [
+      "919baca007d9525b6668c18f79a33197:1",
+      "919baca007d9525b6668c18f79a33197:2"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "26a2b0baec2ef2e226f1297de4b6a86f",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "81fa3a54b696e8510a2f5cd69b29337d",
+      "e0d64dcfaa3b6db5c54ca298ae101d05"
+    ],
+    "category_names": [
+      "watches_gifts"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-08-30 12:03:15",
+    "estimated_delivery_at": "2018-09-24 00:00:00",
+    "carrier_handoff_at": "2018-08-23 17:10:00",
+    "delivery_variance_hours": -587.95,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "c60b801f2d52c7f7f91de00870882a75",
+        "shipping_limit_at": "2018-09-06 12:50:22",
+        "handoff_variance_hours": -331.67,
+        "late_handoff": false
+      },
+      {
+        "seller_id": "7d13fca15225358621be4086e1eb0964",
+        "shipping_limit_at": "2018-08-29 12:50:22",
+        "handoff_variance_hours": -139.67,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 346.01,
+    "freight_total_brl": 35.62,
+    "expected_total_brl": 381.63,
+    "payment_total_brl": 381.63,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "MULTIPLE_PAYMENTS_RECONCILED",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:919baca007d9525b6668c18f79a33197",
+    "item:919baca007d9525b6668c18f79a33197:1",
+    "item:919baca007d9525b6668c18f79a33197:2",
+    "payment:919baca007d9525b6668c18f79a33197:1",
+    "payment:919baca007d9525b6668c18f79a33197:2",
+    "policy:MULTIPLE_PAYMENTS_RECONCILED"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "explain_valid_split_payment",
+    "coordinate_multi_seller_case"
+  ]
+}

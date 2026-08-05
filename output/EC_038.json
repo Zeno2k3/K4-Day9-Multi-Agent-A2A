@@ -1,0 +1,91 @@
+{
+  "case_id": "EC_038",
+  "case_assessment": {
+    "primary_issue": "unsupported_late_claim",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "no_action",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "efcd8852328a37fca811747c09c6fb69"
+    ],
+    "item_ids": [
+      "efcd8852328a37fca811747c09c6fb69:1",
+      "efcd8852328a37fca811747c09c6fb69:2"
+    ],
+    "seller_ids": [
+      "520b493b57809f446cb0a233bb3e25c7"
+    ],
+    "payment_ids": [
+      "efcd8852328a37fca811747c09c6fb69:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "9b7fcfa05fb6f8b88fea3d74a6ba77d6",
+    "related_order_ids": [
+      "44d14514a06127f72cd96745ed0eed21"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "cf8c83ef74f69705d1bec196473b1b45"
+    ],
+    "category_names": [
+      "bed_bath_table"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2017-05-24 15:05:49",
+    "estimated_delivery_at": "2017-06-02 00:00:00",
+    "carrier_handoff_at": "2017-05-22 12:48:50",
+    "delivery_variance_hours": -200.9,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "520b493b57809f446cb0a233bb3e25c7",
+        "shipping_limit_at": "2017-05-25 09:31:35",
+        "handoff_variance_hours": -68.71,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 40.0,
+    "freight_total_brl": 19.88,
+    "expected_total_brl": 59.88,
+    "payment_total_brl": 59.88,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "DELIVERY_WITHIN_ESTIMATE",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": []
+  },
+  "evidence_ids": [
+    "order:efcd8852328a37fca811747c09c6fb69",
+    "item:efcd8852328a37fca811747c09c6fb69:1",
+    "item:efcd8852328a37fca811747c09c6fb69:2",
+    "payment:efcd8852328a37fca811747c09c6fb69:1",
+    "policy:DELIVERY_WITHIN_ESTIMATE"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 0.0
+  },
+  "resolution_actions": [
+    "reject_late_refund"
+  ]
+}

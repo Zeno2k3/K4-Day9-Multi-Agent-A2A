@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_028",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [
+      "multi_item_order"
+    ],
+    "case_status": "action_required",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "1118f05e23d1a8082fa47f8a377de658"
+    ],
+    "item_ids": [
+      "1118f05e23d1a8082fa47f8a377de658:1",
+      "1118f05e23d1a8082fa47f8a377de658:2"
+    ],
+    "seller_ids": [
+      "81783131d2a97c8d44d406a4be81b5d9"
+    ],
+    "payment_ids": [
+      "1118f05e23d1a8082fa47f8a377de658:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "2348acb8486ed639e2a7e9e2aa198d45",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "49f19939bc5c8639e06c36d3bf01ee98"
+    ],
+    "category_names": [
+      "toys"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2018-08-13 00:00:00",
+    "carrier_handoff_at": null,
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "81783131d2a97c8d44d406a4be81b5d9",
+        "shipping_limit_at": "2018-08-09 15:15:29",
+        "handoff_variance_hours": null,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 226.2,
+    "freight_total_brl": 16.42,
+    "expected_total_brl": 242.62,
+    "payment_total_brl": 242.62,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:1118f05e23d1a8082fa47f8a377de658",
+    "item:1118f05e23d1a8082fa47f8a377de658:1",
+    "item:1118f05e23d1a8082fa47f8a377de658:2",
+    "payment:1118f05e23d1a8082fa47f8a377de658:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 242.62
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

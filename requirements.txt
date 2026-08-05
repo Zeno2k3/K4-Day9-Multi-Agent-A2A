@@ -1,0 +1,4 @@
+pandas>=2.2
+pydantic>=2.7
+openai>=1.30
+python-dotenv>=1.0

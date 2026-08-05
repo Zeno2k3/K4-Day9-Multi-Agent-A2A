@@ -1,0 +1,94 @@
+{
+  "case_id": "EC_047",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "2cfc79d9582e9135c0a9b61fa60e6b21"
+    ],
+    "item_ids": [
+      "2cfc79d9582e9135c0a9b61fa60e6b21:1"
+    ],
+    "seller_ids": [
+      "dbc22125167c298ef99da25668e1011f"
+    ],
+    "payment_ids": [
+      "2cfc79d9582e9135c0a9b61fa60e6b21:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "0058f300f57d7b93c477a131a59b36c3",
+    "related_order_ids": [
+      "81a93b2fa39e104b865b2bc471c16008"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "6bd248f93425ceeb625a8a97e2404112"
+    ],
+    "category_names": [
+      "stationery"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2018-03-15 00:00:00",
+    "carrier_handoff_at": "2018-02-20 18:58:43",
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "dbc22125167c298ef99da25668e1011f",
+        "shipping_limit_at": "2018-02-23 17:20:52",
+        "handoff_variance_hours": -70.37,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 59.9,
+    "freight_total_brl": 19.66,
+    "expected_total_brl": 79.56,
+    "payment_total_brl": 79.56,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "voucher"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:2cfc79d9582e9135c0a9b61fa60e6b21",
+    "item:2cfc79d9582e9135c0a9b61fa60e6b21:1",
+    "payment:2cfc79d9582e9135c0a9b61fa60e6b21:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 79.56
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}

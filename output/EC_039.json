@@ -1,0 +1,101 @@
+{
+  "case_id": "EC_039",
+  "case_assessment": {
+    "primary_issue": "late_delivery_seller",
+    "secondary_issues": [
+      "multi_item_order",
+      "repeat_customer"
+    ],
+    "case_status": "action_required",
+    "confidence": 0.85
+  },
+  "affected_entities": {
+    "order_ids": [
+      "8ac5066a163c60c1ae9bf17200df3dd1"
+    ],
+    "item_ids": [
+      "8ac5066a163c60c1ae9bf17200df3dd1:1",
+      "8ac5066a163c60c1ae9bf17200df3dd1:2"
+    ],
+    "seller_ids": [
+      "88460e8ebdecbfecb5f9601833981930"
+    ],
+    "payment_ids": [
+      "8ac5066a163c60c1ae9bf17200df3dd1:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "bce006e903be688f122a39f45b210090",
+    "related_order_ids": [
+      "6af5d028aa14031c4afa3b5dd2d427ab"
+    ]
+  },
+  "product_context": {
+    "product_ids": [
+      "e53e557d5a159f5aa2c5e995dfdf244b"
+    ],
+    "category_names": [
+      "computers_accessories"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": "2018-03-31 13:51:44",
+    "estimated_delivery_at": "2018-03-14 00:00:00",
+    "carrier_handoff_at": "2018-02-21 09:26:40",
+    "delivery_variance_hours": 421.86,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "88460e8ebdecbfecb5f9601833981930",
+        "shipping_limit_at": "2018-02-14 01:35:40",
+        "handoff_variance_hours": 175.85,
+        "late_handoff": true
+      }
+    ],
+    "late_handoff_seller_ids": [
+      "88460e8ebdecbfecb5f9601833981930"
+    ]
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 149.8,
+    "freight_total_brl": 30.54,
+    "expected_total_brl": 180.34,
+    "payment_total_brl": 180.34,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "SELLER_HANDOFF_AFTER_LIMIT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "seller",
+        "party_id": "88460e8ebdecbfecb5f9601833981930"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:8ac5066a163c60c1ae9bf17200df3dd1",
+    "item:8ac5066a163c60c1ae9bf17200df3dd1:1",
+    "item:8ac5066a163c60c1ae9bf17200df3dd1:2",
+    "payment:8ac5066a163c60c1ae9bf17200df3dd1:1",
+    "seller:88460e8ebdecbfecb5f9601833981930",
+    "policy:SELLER_HANDOFF_AFTER_LIMIT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 30.54
+  },
+  "resolution_actions": [
+    "refund_freight",
+    "review_seller_handoff",
+    "verify_refund_completion"
+  ]
+}

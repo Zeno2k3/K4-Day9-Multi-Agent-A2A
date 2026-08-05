@@ -1,0 +1,100 @@
+{
+  "case_id": "EC_009",
+  "case_assessment": {
+    "primary_issue": "canceled_order_paid",
+    "secondary_issues": [
+      "multi_item_order"
+    ],
+    "case_status": "action_required",
+    "confidence": 1.0
+  },
+  "affected_entities": {
+    "order_ids": [
+      "6683aa4f73f7869ec65ebeeef53f700b"
+    ],
+    "item_ids": [
+      "6683aa4f73f7869ec65ebeeef53f700b:1",
+      "6683aa4f73f7869ec65ebeeef53f700b:2",
+      "6683aa4f73f7869ec65ebeeef53f700b:3",
+      "6683aa4f73f7869ec65ebeeef53f700b:4",
+      "6683aa4f73f7869ec65ebeeef53f700b:5"
+    ],
+    "seller_ids": [
+      "4e8dacf3d38f281ae26c3e0321d92d88"
+    ],
+    "payment_ids": [
+      "6683aa4f73f7869ec65ebeeef53f700b:1"
+    ]
+  },
+  "customer_context": {
+    "customer_unique_id": "7e2ae24e734d02f10866ccab9c7ad0c8",
+    "related_order_ids": []
+  },
+  "product_context": {
+    "product_ids": [
+      "c3a52053718435a35e070b991ff546ec"
+    ],
+    "category_names": [
+      "housewares"
+    ]
+  },
+  "delivery_analysis": {
+    "delivered_at": null,
+    "estimated_delivery_at": "2017-05-29 00:00:00",
+    "carrier_handoff_at": null,
+    "delivery_variance_hours": null,
+    "seller_handoff_analysis": [
+      {
+        "seller_id": "4e8dacf3d38f281ae26c3e0321d92d88",
+        "shipping_limit_at": "2017-05-09 01:15:17",
+        "handoff_variance_hours": null,
+        "late_handoff": false
+      }
+    ],
+    "late_handoff_seller_ids": []
+  },
+  "payment_reconciliation": {
+    "currency": "BRL",
+    "item_total_brl": 89.5,
+    "freight_total_brl": 54.8,
+    "expected_total_brl": 144.3,
+    "payment_total_brl": 144.3,
+    "difference_brl": 0.0,
+    "reconciled": true,
+    "payment_types": [
+      "credit_card"
+    ]
+  },
+  "root_cause_analysis": {
+    "ranked_causes": [
+      {
+        "cause_code": "ORDER_CANCELED_AFTER_PAYMENT",
+        "rank": 1
+      }
+    ],
+    "responsible_parties": [
+      {
+        "party_type": "platform",
+        "party_id": "OLIST_PLATFORM"
+      }
+    ]
+  },
+  "evidence_ids": [
+    "order:6683aa4f73f7869ec65ebeeef53f700b",
+    "item:6683aa4f73f7869ec65ebeeef53f700b:1",
+    "item:6683aa4f73f7869ec65ebeeef53f700b:2",
+    "item:6683aa4f73f7869ec65ebeeef53f700b:3",
+    "item:6683aa4f73f7869ec65ebeeef53f700b:4",
+    "item:6683aa4f73f7869ec65ebeeef53f700b:5",
+    "payment:6683aa4f73f7869ec65ebeeef53f700b:1",
+    "policy:ORDER_CANCELED_AFTER_PAYMENT"
+  ],
+  "financial_resolution": {
+    "currency": "BRL",
+    "recommended_refund_brl": 144.3
+  },
+  "resolution_actions": [
+    "issue_full_refund",
+    "verify_refund_completion"
+  ]
+}
