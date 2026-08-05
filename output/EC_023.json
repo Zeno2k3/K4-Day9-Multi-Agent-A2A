@@ -35,7 +35,7 @@
       "c4baedd846ed09b85f78a781b522f126"
     ],
     "category_names": [
-      "garden_tools"
+      "ferramentas_jardim"
     ]
   },
   "delivery_analysis": {
@@ -92,7 +92,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_carrier_delay",
-    "verify_refund_completion"
+    "review_carrier_delay"
   ]
 }

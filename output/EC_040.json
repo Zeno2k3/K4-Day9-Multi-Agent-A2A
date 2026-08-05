@@ -35,7 +35,7 @@
     ],
     "category_names": [
       "cool_stuff",
-      "toys"
+      "brinquedos"
     ]
   },
   "delivery_analysis": {
@@ -92,7 +92,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_carrier_delay",
-    "verify_refund_completion"
+    "review_carrier_delay"
   ]
 }

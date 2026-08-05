@@ -45,7 +45,7 @@ class PolicyAgent:
             primary_issue, facts.late_handoff_seller_ids
         )
         actions = policy_tools.compute_resolution_actions(
-            primary_issue, refund, multi_seller_order, split_payment
+            primary_issue, multi_seller_order, split_payment
         )
         root_cause_code = policy_tools.PRIMARY_ISSUE_ROOT_CAUSE[primary_issue]
 

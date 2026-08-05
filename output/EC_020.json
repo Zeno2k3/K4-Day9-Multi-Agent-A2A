@@ -36,7 +36,7 @@
       "3eef0cb94ba82de806bb30ab743c7655"
     ],
     "category_names": [
-      "office_furniture"
+      "moveis_escritorio"
     ]
   },
   "delivery_analysis": {
@@ -97,7 +97,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_seller_handoff",
-    "verify_refund_completion"
+    "review_seller_handoff"
   ]
 }

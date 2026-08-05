@@ -27,6 +27,15 @@ LLM_MIN_INTERVAL_SECONDS = 0.15  # light client-side pacing to avoid bursty 429s
 
 # --- Business policy constants (EC_POLICY_V2, README §4) -------------------
 POLICY_VERSION = "EC_POLICY_V2"
+
+# product_context.category_names source language.
+#   "pt" -> products.product_category_name verbatim (e.g. "beleza_saude")
+#   "en" -> joined through product_category_name_translation.csv ("health_beauty")
+# README §6 only shows the placeholder "<category_name>", so this is genuinely
+# underspecified. "pt" is the default because §2 enumerates the join keys and
+# does NOT include the translation table, and the spec never asks for a
+# translation — see architecture.md "documented assumptions".
+CATEGORY_NAME_LANGUAGE = "pt"
 RECONCILE_TOLERANCE_BRL = 0.10
 RECONCILE_TOLERANCE_CENTS = 10
 

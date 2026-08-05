@@ -128,7 +128,6 @@ def compute_responsible_parties(
 
 def compute_resolution_actions(
     primary_issue: str,
-    recommended_refund_brl: float,
     multi_seller_order: bool,
     split_payment: bool,
 ) -> list[str]:
@@ -137,7 +136,14 @@ def compute_resolution_actions(
         actions.append("review_seller_handoff")
     elif primary_issue == "late_delivery_logistics":
         actions.append("review_carrier_delay")
-    if recommended_refund_brl > 0:
+    # verify_refund_completion follows a FULL refund only, not a freight refund.
+    # Ground truth for this is the README §6 worked example, which is a real
+    # order (eb09635680fadffb33358e40b05c9029): late_delivery_seller with
+    # recommended_refund_brl=18.27 > 0, yet its expected resolution_actions are
+    # exactly [refund_freight, review_seller_handoff, verify_payment_allocation]
+    # — no verify_refund_completion. Keying off "refund > 0" added a spurious
+    # action to all 20 late-delivery cases.
+    if primary_issue in ("canceled_order_paid", "unavailable_order_paid"):
         actions.append("verify_refund_completion")
     if multi_seller_order:
         actions.append("coordinate_multi_seller_case")

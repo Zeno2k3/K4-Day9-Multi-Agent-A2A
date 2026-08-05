@@ -35,7 +35,7 @@
       "ce066f4a83649651549d717c9b566816"
     ],
     "category_names": [
-      "sports_leisure"
+      "esporte_lazer"
     ]
   },
   "delivery_analysis": {
@@ -98,7 +98,6 @@
   "resolution_actions": [
     "refund_freight",
     "review_seller_handoff",
-    "verify_refund_completion",
     "verify_payment_allocation"
   ]
 }

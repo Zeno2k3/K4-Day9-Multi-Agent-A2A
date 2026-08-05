@@ -38,7 +38,7 @@
       "592962829d5a715304344e656e39108a"
     ],
     "category_names": [
-      "bed_bath_table"
+      "cama_mesa_banho"
     ]
   },
   "delivery_analysis": {
@@ -99,7 +99,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_seller_handoff",
-    "verify_refund_completion"
+    "review_seller_handoff"
   ]
 }

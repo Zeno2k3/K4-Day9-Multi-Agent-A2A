@@ -34,7 +34,7 @@
       "c857b96593773e940454e76efa8eabb3"
     ],
     "category_names": [
-      "furniture_decor"
+      "moveis_decoracao"
     ]
   },
   "delivery_analysis": {
@@ -97,7 +97,6 @@
   "resolution_actions": [
     "refund_freight",
     "review_seller_handoff",
-    "verify_refund_completion",
     "verify_payment_allocation"
   ]
 }

@@ -5,7 +5,13 @@ sellers/categories referenced by those items. No customer or payment access.
 """
 from __future__ import annotations
 
-from src.config import MAX_CATEGORY_NAMES, MAX_ITEM_IDS, MAX_PRODUCT_IDS, MAX_SELLER_IDS
+from src.config import (
+    CATEGORY_NAME_LANGUAGE,
+    MAX_CATEGORY_NAMES,
+    MAX_ITEM_IDS,
+    MAX_PRODUCT_IDS,
+    MAX_SELLER_IDS,
+)
 from src.data.loader import DataStore
 from src.schemas.handoff_models import OrderCore
 from src.schemas.records import ItemRecord
@@ -52,14 +58,23 @@ def build_product_ids(items: list[ItemRecord]) -> list[str]:
     return _dedupe_capped([i.product_id for i in items], MAX_PRODUCT_IDS)
 
 
+def _category_name(ds: DataStore, item: ItemRecord) -> str | None:
+    """Single source of truth for how a category is rendered, so the
+    category_names array and the multiple_categories secondary issue can
+    never disagree about what counts as a distinct category."""
+    product = ds.products_by_id.get(item.product_id)
+    pt_name = product.product_category_name if product else None
+    if CATEGORY_NAME_LANGUAGE == "en":
+        return ds.translate_category(pt_name)
+    return pt_name
+
+
 def build_category_names(ds: DataStore, items: list[ItemRecord]) -> list[str]:
     names: list[str] = []
     for item in items:
-        product = ds.products_by_id.get(item.product_id)
-        pt_name = product.product_category_name if product else None
-        english = ds.translate_category(pt_name)
-        if english:
-            names.append(english)
+        name = _category_name(ds, item)
+        if name:
+            names.append(name)
     return _dedupe_capped(names, MAX_CATEGORY_NAMES)
 
 
@@ -76,11 +91,4 @@ def distinct_seller_count(items: list[ItemRecord]) -> int:
 
 
 def distinct_category_count(ds: DataStore, items: list[ItemRecord]) -> int:
-    cats = set()
-    for item in items:
-        product = ds.products_by_id.get(item.product_id)
-        pt_name = product.product_category_name if product else None
-        english = ds.translate_category(pt_name)
-        if english:
-            cats.add(english)
-    return len(cats)
+    return len({name for item in items if (name := _category_name(ds, item))})

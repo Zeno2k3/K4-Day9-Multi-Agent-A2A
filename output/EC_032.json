@@ -34,8 +34,8 @@
       "197f7d1d3a8b0bf0c8f0394ff71b574b"
     ],
     "category_names": [
-      "sports_leisure",
-      "construction_tools_lights"
+      "esporte_lazer",
+      "construcao_ferramentas_iluminacao"
     ]
   },
   "delivery_analysis": {
@@ -95,7 +95,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_seller_handoff",
-    "verify_refund_completion"
+    "review_seller_handoff"
   ]
 }

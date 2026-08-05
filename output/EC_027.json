@@ -35,7 +35,7 @@
       "6c712952b8ef62f8d06a0314917400c8"
     ],
     "category_names": [
-      "health_beauty"
+      "beleza_saude"
     ]
   },
   "delivery_analysis": {
@@ -92,7 +92,6 @@
   },
   "resolution_actions": [
     "refund_freight",
-    "review_carrier_delay",
-    "verify_refund_completion"
+    "review_carrier_delay"
   ]
 }
